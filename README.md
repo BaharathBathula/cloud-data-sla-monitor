@@ -12,10 +12,17 @@ Modern data pipelines suffer from silent data failures, SLA breaches, and unreli
 - Addresses a critical gap in modern data engineering workflows
 
 ## Key Features
-- Automated data quality checks
-- SLA breach detection
-- Alerting and observability integration
-- Modular, extensible design
+## Quickstart (Demo)
+1. Install dependencies:
+   - `pip install pandas`
+2. Run the orchestrator:
+   - `python src/orchestrator/run_checks.py`
+3. View the generated report:
+   - `outputs/sla_report.csv`
+
+## Sample Output
+The demo generates an SLA/quality compliance report with pass/fail status and metrics for each check.
+
 
 ## Architecture (Coming Soon)
 
