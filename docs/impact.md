@@ -51,3 +51,14 @@ By publishing this framework as an open reference implementation, the contributi
 ## Impact on the Field
 This contribution advances the field by promoting a systematic, SLA-driven approach to data reliability that bridges the gap between technical validation and business accountability. It provides practitioners with a practical model for implementing data reliability standards that are measurable, auditable, and aligned with enterprise needs.
 
+## Measurable Impact Indicators
+
+While the framework is designed as an open reference implementation, its impact can be evaluated using industry-standard data reliability metrics, including:
+
+- Reduction in time to detect data quality issues through automated checks
+- Early identification of SLA breaches before downstream consumption
+- Improved transparency into dataset readiness for analytics and reporting
+- Standardization of reliability checks across multiple datasets
+- Reduction in manual data validation effort for analytics teams
+
+These indicators align with common data engineering practices used to evaluate reliability, observability, and operational maturity in modern data platforms.
