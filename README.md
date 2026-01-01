@@ -27,6 +27,11 @@ The demo generates an SLA/quality compliance report with pass/fail status and me
 ## Architecture (Coming Soon)
 
 ## Use Cases (Coming Soon)
+## Related Articles
+- Why Data SLAs Fail — and How to Enforce Them (Medium): https://medium.com/@baharath.bathula/why-data-slas-fail-and-how-to-enforce-them-with-a-unified-reliability-framework-66b9d2d89228
+- Why Data SLAs Fail — and How to Enforce Them (Substack): https://baharathbathula.substack.com/p/why-data-slas-fail-and-how-to-enforce
+
+
 
 ## Impact on the Field (Coming Soon)
 
