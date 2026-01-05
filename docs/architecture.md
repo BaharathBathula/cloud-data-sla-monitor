@@ -1,69 +1,65 @@
 # Architecture — Unified Data Quality & SLA Monitoring Framework
 
 ## Overview
-This framework provides an original, unified system that combines automated data quality validation with explicit data SLA enforcement for modern cloud data pipelines.
+This framework introduces a unified architecture for enforcing data quality and dataset-level Service Level Agreements (SLAs) across modern cloud data pipelines. It is designed to address a critical gap in analytics systems where data quality validation and operational SLA enforcement are treated as separate concerns.
 
-Unlike common approaches that treat data quality checks and operational monitoring as separate workflows, this framework integrates them into a single, modular architecture designed for repeatable adoption across organizations and data stacks.
+The architecture is modular, cloud-agnostic, and intended as a reusable reference model for organizations building reliable analytics platforms.
 
----
 
-## High-Level Components
+## Architectural Principles
+- Dataset-centric reliability (not pipeline-centric)
+- Explicit, enforceable SLAs
+- Automated and repeatable validation
+- Auditable reliability outputs
+- Applicability across industries and cloud platforms
 
-### 1) Data Sources
-The framework supports structured and semi-structured data sources, including:
-- Data warehouse tables (e.g., Snowflake, Redshift, BigQuery)
-- Data lake files (e.g., S3, ADLS, GCS)
-- Streaming sources (optional extension)
+## High-Level Architecture Components
 
-### 2) Quality Rules Engine
-A rules engine validates datasets using reusable checks such as:
-- Schema validation (columns, types)
-- Null / completeness thresholds
-- Freshness (last updated time)
-- Volume thresholds (row counts)
-- Valid value ranges (min/max, regex, enums)
-- Duplicate detection
-- Referential integrity (optional extension)
+### 1. Data Sources
+The framework supports structured datasets originating from:
+- Data warehouses (e.g., Snowflake, Redshift, BigQuery)
+- Data lakes (e.g., S3, ADLS, GCS)
+- Batch or scheduled ingestion pipelines
 
-### 3) SLA Enforcement Engine
-The SLA engine defines and evaluates SLAs per dataset, such as:
-- Timeliness SLA (data available by a deadline)
-- Completeness SLA (non-null % thresholds)
-- Accuracy SLA (validity/range rules)
-- Availability SLA (pipeline success expectation)
-- Latency SLA (processing time thresholds)
+Datasets are treated as first-class entities with explicit reliability expectations.
 
-### 4) Execution Orchestrator
-The orchestrator runs checks on a schedule or event trigger, enabling compatibility with:
-- Cron-based execution (simple baseline)
-- Airflow / Prefect / Databricks Jobs (enterprise deployment)
-- GitHub Actions (repeatable demo automation)
+### 2. Quality Rules Engine
+The quality rules engine evaluates datasets using reusable, configurable checks, including:
+- Schema validation (columns and data types)
+- Null and completeness thresholds
+- Volume validation (row counts)
+- Freshness checks (last update time)
+- Basic validity and range constraints
 
-### 5) Observability & Alerting
-When checks fail or SLAs are breached, the framework generates incident-style alerts that include:
-- dataset name
-- failed check / SLA type
-- severity level
-- timestamp
-- owner / responsible team (optional extension)
+These checks ensure that datasets meet minimum quality standards before downstream consumption.
 
-Alerts can be delivered via email and collaboration tools (Slack/Teams), with escalation integrations as a future extension.
+### 3. SLA Enforcement Engine
+The SLA engine evaluates whether datasets meet predefined service-level expectations, such as:
+- Timeliness SLAs (data availability by a deadline)
+- Completeness SLAs (acceptable non-null percentages)
+- Availability SLAs (expected delivery guarantees)
 
-### 6) Storage & Reporting
-The framework stores execution results to support reporting and trend analysis, including:
-- lightweight storage (CSV/SQLite) for demo environments
-- database storage (Postgres) for production contexts
+SLAs are evaluated independently of pipeline execution success, focusing on data readiness rather than job status.
 
-This enables outputs such as:
-- Daily SLA compliance report
-- Weekly data reliability scorecard
+### 4. Execution Orchestration
+The framework is designed to integrate with common orchestration mechanisms, including:
+- Cron-based execution
+- Workflow orchestrators (e.g., Airflow, Prefect)
+- Cloud-native job schedulers
 
-## Why This Architecture Is Original
-This architecture is designed as a unified reliability system that treats data SLAs as first-class constraints alongside quality checks, producing actionable, auditable reliability outputs for stakeholders. Many existing tools cover subsets of these capabilities, but this framework integrates them into a modular reference implementation that can be adopted and extended across modern data stacks.
+This allows organizations to adopt the framework incrementally without restructuring existing pipelines.
 
-## Future Extensions
-- Dataset ownership registry and routing
-- Severity scoring and automated escalation
-- Integration with data catalogs and lineage tools
-- Dashboard UI and trend analytics
+### 5. Observability and Reporting
+Validation and SLA evaluation results are captured as structured outputs, including:
+- Pass/fail status for each check
+- Associated metrics and thresholds
+- Timestamped execution records
+
+These outputs enable:
+- SLA compliance reporting
+- Incident-style alerting
+- Trend analysis over time
+
+## Architectural Significance
+This architecture is significant because it unifies data quality validation and SLA enforcement into a single, auditable reliability system. Unlike existing approaches that focus on isolated checks or infrastructure monitoring, this framework provides a cohesive model for operationalizing data reliability at scale
 
