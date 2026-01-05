@@ -10,95 +10,95 @@ Modern data pipelines suffer from silent data failures, SLA breaches, and unreli
 - Combines data quality validation and SLA enforcement into a single automated system
 - Provides a reusable, cloud-agnostic architecture
 - Addresses a critical gap in modern data engineering workflows
-
+- This project provides a unified, dataset-centric reliability framework that combines automated data quality validation with explicit SLA enforcement (timeliness, completeness, availability). Many approaches treat quality checks and operational monitoring separately; this framework integrates both into a single auditable system designed to be reusable across modern cloud data stacks.
+- 
 ## Key Features
-## Quickstart (Demo)
-1. Install dependencies:
-   - `pip install pandas`
-2. Run the orchestrator:
-   - `python src/orchestrator/run_checks.py`
-3. View the generated report:
-   - `outputs/sla_report.csv`
+- Dataset-Level SLA Enforcement
+  Treats datasets as first-class reliability entities with explicit Service Level Agreements (SLAs) for timeliness, completeness, and availability.
+
+- Unified Quality and SLA Validation
+  Combines automated data quality checks and SLA evaluation within a single, auditable execution flow.
+
+- Automated Reliability Checks
+  Supports configurable checks such as null thresholds, row count validation, and freshness evaluation.
+
+- Modular and Extensible Design  
+  Framework components are designed to be reusable and adaptable to different data platforms and organizational requirements.
+
+- Auditable Compliance Outputs 
+  Produces structured SLA compliance reports that enable teams to assess dataset readiness before downstream consumption.
+
+- Cloud-Agnostic Reference Implementation  
+  Designed as an open reference framework that can be applied across modern cloud data warehouses and data lake architectures.
 
 ## Sample Output
 The demo generates an SLA/quality compliance report with pass/fail status and metrics for each check.
 
-
 ## Architecture — Unified Data Quality & SLA Monitoring Framework
+The Unified Data Quality & SLA Monitoring Framework is designed as a modular, dataset-centric reliability system that integrates data quality validation and SLA enforcement into a single, auditable workflow.
 
-## Overview
-This framework introduces a unified architecture for enforcing data quality and dataset-level Service Level Agreements (SLAs) across modern cloud data pipelines. It is designed to address a critical gap in analytics systems where data quality validation and operational SLA enforcement are treated as separate concerns.
+At a high level, the architecture consists of the following components:
 
-The architecture is modular, cloud-agnostic, and intended as a reusable reference model for organizations building reliable analytics platforms.
+- Data Sources
+   Structured datasets from data warehouses or data lakes serve as the primary inputs. Datasets are treated as first-class entities with explicit reliability expectations.
 
-## Architectural Principles
-- Dataset-centric reliability (not pipeline-centric)
-- Explicit, enforceable SLAs
-- Automated and repeatable validation
-- Auditable reliability outputs
-- Applicability across industries and cloud platforms
+- Quality Rules Engine
+   Evaluates datasets using automated checks such as schema validation, completeness thresholds, volume validation, and freshness checks to ensure baseline data quality.
 
-## High-Level Architecture Components
+- SLA Enforcement Engine
+   Applies dataset-level Service Level Agreements (SLAs), including timeliness, completeness, and availability requirements, independent of pipeline execution success.
 
-### 1. Data Sources
-The framework supports structured datasets originating from:
-- Data warehouses (e.g., Snowflake, Redshift, BigQuery)
-- Data lakes (e.g., S3, ADLS, GCS)
-- Batch or scheduled ingestion pipelines
+- Execution Orchestration
+   Coordinates the execution of quality checks and SLA evaluations on a scheduled or event-driven basis, allowing integration with existing workflow orchestration tools.
 
-Datasets are treated as first-class entities with explicit reliability expectations.
---
-## 2. Quality Rules Engine
-The quality rules engine evaluates datasets using reusable, configurable checks, including:
-- Schema validation (columns and data types)
-- Null and completeness thresholds
-- Volume validation (row counts)
-- Freshness checks (last update time)
-- Basic validity and range constraints
+- Reporting and Observability 
+   Produces structured SLA compliance outputs and reports that can be reviewed by data and analytics teams to assess dataset readiness and reliability.
 
-These checks ensure that datasets meet minimum quality standards before downstream consumption.
---
-## 3. SLA Enforcement Engine
-The SLA engine evaluates whether datasets meet predefined service-level expectations, such as:
-- Timeliness SLAs (data availability by a deadline)
-- Completeness SLAs (acceptable non-null percentages)
-- Availability SLAs (expected delivery guarantees)
-
-SLAs are evaluated independently of pipeline execution success, focusing on data readiness rather than job status.
---
-## 4. Execution Orchestration
-The framework is designed to integrate with common orchestration mechanisms, including:
-- Cron-based execution
-- Workflow orchestrators (e.g., Airflow, Prefect)
-- Cloud-native job schedulers
-
-This allows organizations to adopt the framework incrementally without restructuring existing pipelines.
---
-## 5. Observability and Reporting
-Validation and SLA evaluation results are captured as structured outputs, including:
-- Pass/fail status for each check
-- Associated metrics and thresholds
-- Timestamped execution records
-
-These outputs enable:
-- SLA compliance reporting
-- Incident-style alerting
-- Trend analysis over time
-
-## Architectural Significance
-This architecture is significant because it unifies data quality validation and SLA enforcement into a single, auditable reliability system. Unlike existing approaches that focus on isolated checks or infrastructure monitoring, this framework provides a cohesive model for operationalizing data reliability at scale.
-
-
-
-## Use Cases (Coming Soon)
-## Related Articles
-- Why Data SLAs Fail — and How to Enforce Them (Medium): https://medium.com/@baharath.bathula/why-data-slas-fail-and-how-to-enforce-them-with-a-unified-reliability-framework-66b9d2d89228
-- Why Data SLAs Fail — and How to Enforce Them (Substack): https://baharathbathula.substack.com/p/why-data-slas-fail-and-how-to-enforce
-
-
+This unified architecture enables organizations to move from reactive data validation toward proactive reliability engineering for analytics systems. A detailed architectural description is provided in the project documentation.
 
 ## Impact on the Field
-## Impact and Significance
+This project contributes to the field of data engineering and analytics by introducing a practical, reusable approach for enforcing dataset-level Service Level Agreements (SLAs) alongside automated data quality validation. It addresses a recognized industry gap where data quality checks and operational monitoring are often implemented as disconnected processes.
+
+By treating datasets as first-class reliability entities with explicit, enforceable SLAs, the framework helps organizations move from reactive data validation to proactive reliability engineering. The architecture and reference implementation are designed to be cloud-agnostic and adaptable across industries, enabling data teams to standardize reliability practices, improve trust in analytics, and reduce downstream data incidents.
+
+As an open reference implementation, this work extends beyond a single organization and provides value to the broader data engineering community by offering a concrete model for operationalizing data reliability in modern analytics platforms.
+
+## Use Cases
+This framework is designed for organizations that rely on timely, complete, and reliable data for analytics and decision-making.
+
+- Financial & Regulatory Reporting
+Ensures critical financial datasets meet timeliness and completeness SLAs before reporting cycles, reducing delays and compliance risk.
+
+- E-commerce & Digital Platforms
+Monitors freshness and completeness of pricing, inventory, and transaction datasets to prevent stale analytics and customer-facing errors.
+
+- Enterprise Analytics Platforms
+Standardizes data reliability checks and dataset-level SLAs across multiple teams, improving trust in shared analytics assets.
+- Data-Driven Operations
+Provides auditable SLA compliance reports that help data and analytics teams proactively detect issues before downstream consumption.
+
+## Documentation
+- Architecture: `docs/architecture.md`
+- Enterprise Use Cases: `docs/use-cases.md`
+- Impact & Significance: `docs/impact.md`
+
+## Quickstart
+1. Install dependencies:
+   - `pip install pandas`
+   - Python 3.9+ (recommended)
+2. Run the orchestrator:
+   - `python src/orchestrator/run_checks.py`
+3. View the generated report:
+   - `outputs/sla_report.csv`
+  
+## Repository Structure
+The repository is organized to clearly separate framework logic, documentation, and demonstration artifacts.
+
+- `src/` — Core framework implementation, including data quality checks, SLA enforcement logic, and execution orchestration  
+- `data/` — Sample dataset used to demonstrate framework functionality  
+- `outputs/` — Generated SLA compliance report produced by the demo execution  
+- `docs/` — Detailed documentation covering architecture, use cases, and impact  
+- `README.md` — Project overview, rationale, and usage instructions
 
 ## Business Impact
 The framework enables organizations to proactively identify and address data reliability issues before they impact downstream analytics and decision-making.
@@ -127,6 +127,15 @@ Practitioners can:
 
 This positions the work as a field-level contribution rather than an internal engineering artifact.
 
+## Related Articles
+- Article #1: Why Data SLAs Fail — and How to Enforce Them: https://medium.com/@baharath.bathula/why-data-slas-fail-and-how-to-enforce-them-with-a-unified-reliability-framework-66b9d2d89228
+- Article #1 (Substack): http://baharathbathula.substack.com/publish/posts/detail/183033792?referrer=%2Fpublish%2Fhome%3Futm_source%3Dmenu   
+- Article #2 (Substack): From Data Incidents to Data SLAs: https://baharathbathula.substack.com/p/from-data-incidents-to-data-slas
+- Article #2 (LinkedIn): https://www.linkedin.com/pulse/from-data-incidents-slas-applying-reliability-baharath-bathula-o8g0c/?trackingId=QYb%2BXGm9ze7Uog%2BaUNrLTA%3D%3D
+- Article #2 (Medium): https://medium.com/@baharath.bathula/from-data-incidents-to-data-slas-applying-reliability-engineering-to-analytics-pipelines-ae42fb9134b8
+
+## How to Cite
+Baharath Bathula. *Unified Data Quality & SLA Monitoring Framework for Cloud Data Pipelines* (open reference implementation). GitHub repository.
 
 ## License
 MIT
