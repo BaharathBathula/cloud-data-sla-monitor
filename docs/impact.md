@@ -62,3 +62,33 @@ While the framework is designed as an open reference implementation, its impact 
 - Reduction in manual data validation effort for analytics teams
 
 These indicators align with common data engineering practices used to evaluate reliability, observability, and operational maturity in modern data platforms.
+
+## Impact and Significance
+
+## Business Impact
+The framework enables organizations to proactively identify and address data reliability issues before they impact downstream analytics and decision-making.
+
+Key business benefits include:
+- Reduced time to detect data quality and SLA violations
+- Improved transparency into dataset readiness
+- Reduced manual data validation by analytics teams
+- Increased trust in data-driven decisions
+
+## Industry Impact
+Data reliability is a recognized challenge across modern analytics platforms. This framework contributes to the field by providing a practical, reusable reference model for enforcing reliability standards.
+
+Its significance lies in:
+- Promoting dataset-level SLAs as enforceable constraints
+- Bridging the gap between data quality checks and operational monitoring
+- Translating reliability engineering principles into analytics systems
+
+## Contribution Beyond a Single Organization
+By publishing this framework as an open reference implementation, the contribution extends beyond a single employer or project.
+
+Practitioners can:
+- Study the architecture
+- Adapt the framework to their environments
+- Use it as a baseline for building internal reliability systems
+
+This positions the work as a field-level contribution rather than an internal engineering artifact.
+
