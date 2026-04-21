@@ -160,4 +160,7 @@ flowchart LR
     F --> H["Data Engineers / Analytics Teams"]
     G --> H
 
+### 🔹 Sample Dataset
+![Dataset](docs/images/dataset.png)
+
 
