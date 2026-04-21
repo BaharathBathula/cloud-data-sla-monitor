@@ -10,7 +10,7 @@ Modern data pipelines suffer from silent data failures, SLA breaches, and unreli
 - Combines data quality validation and SLA enforcement into a single automated system
 - Provides a reusable, cloud-agnostic architecture
 - Addresses a critical gap in modern data engineering workflows
-- This project provides a unified, dataset-centric reliability framework that combines automated data quality validation with explicit SLA enforcement (timeliness, completeness, availability). Many approaches treat quality checks and operational monitoring separately; this framework integrates both into a single auditable system designed to be reusable across modern cloud data stacks.
+- This project provides a unified, dataset-centric reliability framework that combines automated data quality validation with explicit SLA enforcement (timeliness, completeness, availability). Many approaches treat quality checks and operational monitoring separately; this framework integrates them into a single auditable system that is reusable across modern cloud data stacks.
 - 
 ## Key Features
 - Dataset-Level SLA Enforcement
@@ -20,7 +20,7 @@ Modern data pipelines suffer from silent data failures, SLA breaches, and unreli
   Combines automated data quality checks and SLA evaluation within a single, auditable execution flow.
 
 - Automated Reliability Checks
-  Supports configurable checks such as null thresholds, row count validation, and freshness evaluation.
+  Supports configurable checks, including null thresholds, row count validation, and freshness evaluation.
 
 - Modular and Extensible Design  
   Framework components are designed to be reusable and adaptable to different data platforms and organizational requirements.
