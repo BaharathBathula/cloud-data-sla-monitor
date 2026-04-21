@@ -139,3 +139,25 @@ Baharath Bathula. *Unified Data Quality & SLA Monitoring Framework for Cloud Dat
 
 ## License
 MIT
+
+## Architecture
+
+The framework is designed as a modular, dataset-centric reliability system.
+
+```mermaid
+flowchart LR
+
+    A["Data Sources"] --> B["Ingestion / Dataset Load"]
+    B --> C["Quality Rules Engine"]
+    B --> D["SLA Enforcement Engine"]
+
+    C --> E["Execution Orchestration"]
+    D --> E
+
+    E --> F["Compliance Report"]
+    E --> G["Observability / Monitoring"]
+
+    F --> H["Data Engineers / Analytics Teams"]
+    G --> H
+
+
